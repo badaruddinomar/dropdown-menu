@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /* common css styling starts from here */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      li {
+        list-style-type: none;
+      }
+      body {
+        width: 100vw;
+        overflow: hidden;
+        background: #e0e0e0;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      /* common css styling ends here */
+
+      nav {
+        width: 100%;
+        background: #e0e0e0;
+        box-shadow: 28px 28px 56px #d5d5d5, -28px -28px 56px #ebebeb;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav > ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      nav > ul > li {
+        padding: 1rem 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      nav > ul > li > a {
+        margin: 0 1rem;
+        font-size: 18px;
+        letter-spacing: 0.8px;
+        transition: all 0.23s linear;
+        border-radius: 4px;
+        padding: 10px 15px;
+        color: black;
+      }
+      nav > ul > li > a > i {
+        font-size: 15px;
+      }
+      nav > ul > li > a:hover {
+        background: rgba(255, 255, 255, 0.549);
+      }
+
+      .submenu-parent {
+        position: relative;
+      }
+      .submenu-parent:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 0rem;
+      }
+      .submenu {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 1rem;
+        top: 6rem;
+        margin-top: 10rem;
+        width: 200px;
+        height: auto;
+        border-top: 4px solid gray;
+        transition: all 0.3s ease-in-out;
+
+        background: #e0e0e0;
+        box-shadow: 28px 28px 56px #d5d5d5, -28px -28px 56px #ebebeb;
+      }
+      .submenu > li {
+        margin: 1rem 0;
+        padding: 0 1rem;
+        border-radius: 5px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .submenu > li > a {
+        font-size: 18px;
+
+        letter-spacing: 0.8px;
+        color: black;
+        padding-bottom: 5px;
+        transition: all 0.3s linear;
+        position: relative;
+        margin-bottom: 5px;
+      }
+      .submenu > li > a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: gray;
+        width: 0%;
+        height: 3px;
+        transition: all 0.3s linear;
+      }
+      .submenu > li:hover > a::after {
+        width: 100%;
+      }
+      .submenu > li i {
+        font-size: 18px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+      /*  submenu- 2 styling starts here */
+      .submenu-parent-2 {
+        position: relative;
+      }
+      .submenu-2 {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+
+        position: absolute;
+        top: 0;
+        left: 20rem;
+      }
+
+      .submenu-parent-2:hover .submenu-2 {
+        display: block;
+      }
+    </style>
+
+    <title>DropDown-Menu</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="submenu-parent">
+          <a href="#">Home <i>&darr;</i></a>
+          <ul class="submenu">
+            <li class="submenu-parent submenu-parent-2">
+              <a href="#">About US </a><i>&rarr;</i>
+
+              <ul class="submenu submenu-2">
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">About US</a>
+        </li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Product</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
